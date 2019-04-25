@@ -11,9 +11,8 @@
 
 #### 思考
 
-1. [2018-11-28 CAP理论的思考](https://github.com/xuyang0902/ido/blob/master/target.md)
-2.
-
+1. [2018-11-28 CAP理论的思考](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/think/cap)
+2. [2019-04-25 阻塞非阻塞 同步异步 并行 并发 串行](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/think/BlockingSynThinking)
 
 #### 核心竞争力
     
