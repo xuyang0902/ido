@@ -200,17 +200,18 @@ public class SuggestMutiThreadPoolMain {
 
 
 参考以上代码，博主贴一张跑代码时，线程的情况
-
-![线程池运行情况]( /image/线程池运行状况.jpg)
+[image:E1D77D47-4B8C-483C-BF8F-17E989F88145-2867-0000415BFF73AFA1/线程池运行状况.jpg]
 
 这里我简单说一下线程池的运行逻辑
 
-1、task请求进来
-2、是否到达核心线程数，没到就直接创建线程 处理task
-3、达到核心数了，判断队列能都放进去，能放就放在队列中
-4、队列放不下了，线程数是否达到最大，没有达到最大 就创建线程处理
-5、达到最大线程数，走到拒绝策略
+1. task请求进来
+2. 是否到达核心线程数，没到就直接创建线程 处理task
+3. 达到核心数了，判断队列能都放进去，能放就放在队列中
+4. 队列放不下了，线程数是否达到最大，没有达到最大 就创建线程处理
+5. 达到最大线程数，走到拒绝策略
+
 ```
+java.util.concurrent.ThreadPoolExecutor#execute源码代码分析
 public void execute(Runnable command) {
     if (command == null)
         throw new NullPointerException();
