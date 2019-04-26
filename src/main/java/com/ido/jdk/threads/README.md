@@ -200,7 +200,7 @@ public class SuggestMutiThreadPoolMain {
 
 
 参考以上代码，博主贴一张跑代码时，线程的情况
-[image:E1D77D47-4B8C-483C-BF8F-17E989F88145-2867-0000415BFF73AFA1/线程池运行状况.jpg]
+![线程池运行情况]( /image/线程池运行状况.jpg)
 
 这里我简单说一下线程池的运行逻辑
 
