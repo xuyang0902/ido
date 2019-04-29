@@ -8,7 +8,7 @@
     了解思想，假设让自己实现，会怎么做？ 
        
 ### 方向
-	本篇不会一行一行的引导大家去读spring的源码，主要是带领代价理解Spring的设计思想。
+	本篇不会一行一行的引导大家去读spring的源码，主要是带领大家理解Spring的设计思想。
 	当然，希望读完本篇文章，对读者后续阅读spring源码有一定的帮助。
  
 ### Spring 核心
@@ -42,10 +42,10 @@
 
 1. 解析xml（包括扫描注解） 放到beanDefinitionMap
 2. spring开放扩展BeanDefinitionRegistryPostProcessor 操作注册表（意味着 用户可以 获取一些他指定想要的bean 但是不需要再进行xml配置了）
-3. spring开放扩展BeanFactoryPostProcessor,，操作beanDefinition（意味着用户可以 根据自定义的规则 修改指定对象的属性）
-4. spring开放扩展 BeanPostProcessors 操作bean（意味着可以包装这个bean ，这就可以做很多事情了呀）
+3. spring开放扩展BeanFactoryPostProcessor操作beanDefinition（意味着用户可以 根据自定义的规则 修改指定对象的属性）
+4. spring开放扩展 BeanPostProcessors 操作bean（意味着可以包装这个bean ，*这就可以做很多事情了呀*）
 5. getBean：获取bean 查找注册表，根据beanDefinition获取bean的信息 实例化，最后看是否需要通过BeanPostProcessors 加强。
-*后续我会对getBean这块写一篇源码级别的分享。*
+*后续我会对getBean这块写一篇源码级别的分享*
 
 
 
