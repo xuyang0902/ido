@@ -35,7 +35,7 @@
     7. DisposableBean： 在关闭容器前做一些操作。
 
 ### 个人简单图解Spring的IOC
-![Spring-IOC]( /image/spring-ioc.png)
+![Spring-IOC](/image/spring-ioc.jpg)
 
 以上这幅图去掉了spring很多杰设计，只保留了一部分核心的关于IOC和AOP
 的设计。
@@ -54,8 +54,11 @@
 ### 推荐源码阅读 
 
 这位大兄弟的几篇源码分析 写的很用心，值得阅读，分享一下。
+
 [Spring IOC](https://javadoop.com/post/spring-ioc)
+
 [Spring Aop 使用](https://javadoop.com/post/spring-aop-intro)
+
 [Spring Aop 源码分析](https://javadoop.com/post/spring-aop-source)
 
 
