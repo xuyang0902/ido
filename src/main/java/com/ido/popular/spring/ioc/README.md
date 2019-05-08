@@ -15,7 +15,7 @@
     * IOC: 控制反转，依赖注入
     你想要什么 告诉他好了，他都会给你（除非是真的没有 哈哈）
     * AOP: 面向切面编程
-    不手动改变你的代码，依旧可以在你代码执行的前后加点我相加的东西   
+    不手动改变你的代码，依旧可以在你代码执行的前后加点我想加的东西   
 	    
 [容易混淆的两个概念:beanFactory和factoryBean](https://blog.csdn.net/qiesheng/article/details/72875315)
     
@@ -46,8 +46,6 @@
 4. spring开放扩展 BeanPostProcessors 操作bean（意味着可以包装这个bean ，*这就可以做很多事情了呀*）
 5. getBean：获取bean 查找注册表，根据beanDefinition获取bean的信息 实例化，最后看是否需要通过BeanPostProcessors 加强。
 *后续我会对getBean这块写一篇源码级别的分享*
-
-
 
 
 
