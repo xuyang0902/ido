@@ -130,7 +130,7 @@ simpleBean.setXXX();
 				boolean newSingleton = false;
 				try {
 				     
-				    //工厂获取bean  @see  createBean
+				    //工厂获取bean 核心还是要关注createBean(beanName, mbd, args);
 					singletonObject = singletonFactory.getObject();
 					newSingleton = true;
 				}
@@ -185,7 +185,7 @@ simpleBean.setXXX();
 		}
 
 		try {
-			// 在初始化之前给BeanPostProcessors一个机会 可以返回一个bean 【BeanPostProcessors扩展处】
+			// 1、在初始化之前给BeanPostProcessors一个机会 可以返回一个bean 【BeanPostProcessors扩展处】
 			Object bean = resolveBeforeInstantiation(beanName, mbdToUse);
 			if (bean != null) {
 				return bean;
@@ -196,14 +196,14 @@ simpleBean.setXXX();
 					"BeanPostProcessor before instantiation of bean failed", ex);
 		}
 
-        //实例化前bean并没有操作，那么我们正常流程 需要实例化bean
+        // 2、实例化前bean并没有操作，那么我们正常流程 需要实例化bean
 		Object beanInstance = doCreateBean(beanName, mbdToUse, args);
 		return beanInstance;
 	}
 ```
 
 ```
-    在bean正常真正实例化前开放的扩展点
+    1、 在bean正常真正实例化前开放的扩展点
     
 	protected Object resolveBeforeInstantiation(String beanName, RootBeanDefinition mbd) {
 		Object bean = null;
@@ -259,7 +259,7 @@ simpleBean.setXXX();
 ```
 
 ```
-    //常规创建bean的流程 Core
+    //2、常规创建bean的流程 【重点关注】
     
     protected Object doCreateBean(final String beanName, final RootBeanDefinition mbd, final Object[] args) {
 		
@@ -351,7 +351,6 @@ simpleBean.setXXX();
     	
     	
 ```
-
 
 ## about ME        
 [雨人 github](https://github.com/xuyang0902)
