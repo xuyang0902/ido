@@ -4,8 +4,8 @@
  
 #### 基础知识
 1. [2019-04-26-JDK线程池的理解](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/jdk/threads)
-1. [2019-05-16-树的几种结构回顾](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/collections/tree)
-1. [2019-05-16-JDK常用集合](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/collections)
+1. [2019-05-16-树的几种结构回顾](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/jdk/collections/tree)
+1. [2019-05-16-JDK常用集合](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/jdk/collections)
      
      
 #### 开源框架
