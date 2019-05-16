@@ -1,4 +1,4 @@
-package com.ido.popular.spring.aop.proxyfactory;
+package com.ido.popular.spring.aop;
 
 /**
  * @author xu.qiang

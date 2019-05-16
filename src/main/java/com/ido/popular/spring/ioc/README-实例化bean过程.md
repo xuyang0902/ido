@@ -1,6 +1,7 @@
-
 ### Spring-实例化Bean过程
-    如何实例化一个bean？
+```
+如何实例化一个bean？
+```
 
 #### 假如要我们自己来实例化一个对象，我们会怎么做？
 
@@ -12,11 +13,13 @@ simpleBean.setXXX();
 
 #### bean管理是Spring Ioc核心的思想：beanFacotry≈类似哆唻A梦的口袋
 
-    简单bean debug请参考 com.ido.popular.spring.ioc.Main
-    FactoryBean debug请参考  com.ido.popular.spring.aop.proxyfactory.Main 【AOP的一种实现方式】
-    
-    >>> 源码解析
-    org.springframework.beans.factory.support.AbstractBeanFactory#doGetBean
+```
+简单bean debug请参考 com.ido.popular.spring.ioc.Main
+FactoryBean debug请参考  com.ido.popular.spring.aop.proxyfactory.Main 【AOP的一种实现方式】
+
+>>> 源码解析
+org.springframework.beans.factory.support.AbstractBeanFactory#doGetBean
+```
 
 ```
     protected <T> T doGetBean(
@@ -130,7 +133,7 @@ simpleBean.setXXX();
 				boolean newSingleton = false;
 				try {
 				     
-				    //工厂获取bean 核心还是要关注createBean(beanName, mbd, args);
+				    //工厂获取bean  @see  createBean
 					singletonObject = singletonFactory.getObject();
 					newSingleton = true;
 				}
@@ -185,7 +188,7 @@ simpleBean.setXXX();
 		}
 
 		try {
-			// 1、在初始化之前给BeanPostProcessors一个机会 可以返回一个bean 【BeanPostProcessors扩展处】
+			// 在初始化之前给BeanPostProcessors一个机会 可以返回一个bean 【BeanPostProcessors扩展处】
 			Object bean = resolveBeforeInstantiation(beanName, mbdToUse);
 			if (bean != null) {
 				return bean;
@@ -196,14 +199,14 @@ simpleBean.setXXX();
 					"BeanPostProcessor before instantiation of bean failed", ex);
 		}
 
-        // 2、实例化前bean并没有操作，那么我们正常流程 需要实例化bean
+        //实例化前bean并没有操作，那么我们正常流程 需要实例化bean
 		Object beanInstance = doCreateBean(beanName, mbdToUse, args);
 		return beanInstance;
 	}
 ```
 
 ```
-    1、 在bean正常真正实例化前开放的扩展点
+    在bean正常真正实例化前开放的扩展点
     
 	protected Object resolveBeforeInstantiation(String beanName, RootBeanDefinition mbd) {
 		Object bean = null;
@@ -259,7 +262,7 @@ simpleBean.setXXX();
 ```
 
 ```
-    //2、常规创建bean的流程 【重点关注】
+    //常规创建bean的流程 Core
     
     protected Object doCreateBean(final String beanName, final RootBeanDefinition mbd, final Object[] args) {
 		
@@ -351,15 +354,3 @@ simpleBean.setXXX();
     	
     	
 ```
-
-## about ME        
-[雨人 github](https://github.com/xuyang0902)
-
-
-
-
-
-
-
-
-

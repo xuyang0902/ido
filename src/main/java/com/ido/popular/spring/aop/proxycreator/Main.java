@@ -1,5 +1,6 @@
 package com.ido.popular.spring.aop.proxycreator;
 
+import com.ido.popular.spring.aop.StudentService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:**/spring/aop-proxycreator.xml");
-        BirdService birdService = applicationContext.getBean("birdServiceImpl", BirdService.class);
-        birdService.fly("笨鸟  >> ");
+        StudentService studentService = applicationContext.getBean("studentService",StudentService.class);
+        studentService.study();
 
     }
 }

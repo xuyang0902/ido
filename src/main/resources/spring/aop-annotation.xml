@@ -6,20 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-    <bean id="studentInteceptor" class="com.ido.popular.spring.aop.proxyfactory.inteceptor.StudentInteceptor"/>
+    <context:component-scan base-package="com.ido.popular.spring.aop.annoaspect"/>
 
+    <!--aspepctj的注解代理  默认使用jdk代理  当proxy-target-class=true时使用cglib代理-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
 
-    <bean id="studentService" class="org.springframework.aop.framework.ProxyFactoryBean" lazy-init="true">
-        <property name="proxyInterfaces" value="com.ido.popular.spring.aop.StudentService" />
-        <property name="target">
-            <bean class="com.ido.popular.spring.aop.StudentServiceImpl" />
-        </property>
-        <property name="interceptorNames">
-            <list>
-                <value>studentInteceptor</value>
-            </list>
-        </property>
-    </bean>
+    <bean class="com.ido.popular.spring.aop.StudentServiceImpl" id="studentService" lazy-init="true"/>
 
 
 </beans>
