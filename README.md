@@ -13,9 +13,10 @@
 2. [2019-04-18 Disruptor-真香](https://www.jianshu.com/p/1aa1c29d2968)
 3. [2019-04-29 Spring IOC AOP](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/popular/spring/ioc)
 4. [2019-05-08 Spring Bean 实例化源码分析](https://github.com/xuyang0902/ido/blob/master/src/main/java/com/ido/popular/spring/ioc/README-%E5%AE%9E%E4%BE%8B%E5%8C%96bean%E8%BF%87%E7%A8%8B.md)
-5. [2019-05-XX Spring 如何解决循环依赖](https://github.com/xuyang0902/ido/blob/master/src/main/java/com/ido/popular/spring/ioc/README-%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98.md)
-6. [2019-05-XX Spring AOP 源码解读](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/popular/spring/aop)
-
+5. [2019-05-20 Spring 如何解决循环依赖](https://github.com/xuyang0902/ido/blob/master/src/main/java/com/ido/popular/spring/ioc/README-%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98.md)
+6. [2019-05-25 Spring AOP 源码解读](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/popular/spring/aop)
+6. [2019-06-26 Netty基础01](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/popular/netty)
+6. [2019-06-26 Netty理解-笔记.pdf](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/popular/netty/netty简单笔记.pdf)
 
 
 #### 思考
