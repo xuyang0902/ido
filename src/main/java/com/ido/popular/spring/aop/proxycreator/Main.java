@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:**/spring/aop-proxycreator.xml");
-        StudentService studentService = applicationContext.getBean("studentService",StudentService.class);
+        StudentService studentService = (StudentService) applicationContext.getBean("studentService",StudentService.class);
         studentService.study();
 
     }

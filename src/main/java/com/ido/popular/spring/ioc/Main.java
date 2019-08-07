@@ -13,11 +13,11 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:**/spring/ioc-simple.xml");
-        SimpleBean simpleBean = applicationContext.getBean("simpleBean",SimpleBean.class);
+        SimpleBean simpleBean = (SimpleBean) applicationContext.getBean("simpleBean",SimpleBean.class);
         System.out.println(simpleBean.getAge());
 
 
-        simpleBean = applicationContext.getBean("simpleBean",SimpleBean.class);
+        simpleBean = (SimpleBean) applicationContext.getBean("simpleBean",SimpleBean.class);
         System.out.println(simpleBean.getAge());
 
     }
