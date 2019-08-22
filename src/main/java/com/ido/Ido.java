@@ -1,5 +1,7 @@
 package com.ido;
 
+import java.util.HashSet;
+
 /**
  * ido
  *
@@ -9,6 +11,10 @@ package com.ido;
 public class Ido {
 
     public static void main(String[] args) {
+
+        HashSet hashset = new HashSet();
+
+        hashset.add(new Integer(1));
 
         Integer a = 127;
 
