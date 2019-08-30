@@ -3,7 +3,7 @@
 [给自己定的目标大纲](https://github.com/xuyang0902/ido/blob/master/target.md)
  
 #### 基础知识
-1. [ReentrantLock源码解读]()
+1. [ReentrantLock源码解读](https://github.com/xuyang0902/ido/blob/master/src/main/java/com/ido/jdk/ReentrantLock%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md)
 
      
 #### 开源框架
