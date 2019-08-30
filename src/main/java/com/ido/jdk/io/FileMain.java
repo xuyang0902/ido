@@ -1,7 +1,6 @@
 package com.ido.jdk.io;
 
 import java.io.*;
-import java.nio.channels.FileChannel;
 
 /**
  * @author xu.qiang

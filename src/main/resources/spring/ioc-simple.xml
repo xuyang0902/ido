@@ -7,7 +7,7 @@
 
 
 
-    <bean class="com.ido.popular.spring.ioc.bean.SimpleBean" id="simpleBean" lazy-init="true" >
+    <bean class="com.ido.spring.ioc.bean.SimpleBean" id="simpleBean" lazy-init="true" >
         <property name="age" value="18"/>
     </bean>
 

@@ -6,13 +6,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-    <bean id="studentInteceptor" class="com.ido.popular.spring.aop.proxyfactory.inteceptor.StudentInteceptor"/>
+    <bean id="studentInteceptor" class="com.ido.spring.aop.proxyfactory.inteceptor.StudentInteceptor"/>
 
 
     <bean id="studentService" class="org.springframework.aop.framework.ProxyFactoryBean" lazy-init="true">
-        <property name="proxyInterfaces" value="com.ido.popular.spring.aop.StudentService" />
+        <property name="proxyInterfaces" value="com.ido.spring.aop.StudentService" />
         <property name="target">
-            <bean class="com.ido.popular.spring.aop.StudentServiceImpl" />
+            <bean class="com.ido.spring.aop.StudentServiceImpl" />
         </property>
         <property name="interceptorNames">
             <list>

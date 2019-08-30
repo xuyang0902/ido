@@ -17,11 +17,12 @@ public class ThreadMain {
 
                 while(!Thread.currentThread().isInterrupted()){
                     System.out.println(">>>>");
-//                    try {
-//                        Thread.sleep(1000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                 }
             }
         });
@@ -44,12 +45,19 @@ public class ThreadMain {
 
 
         try {
+            //cpu让出给这个thread
             thread.join(3200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         thread.interrupt();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
     }

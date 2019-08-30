@@ -18,7 +18,7 @@ public class CasMain {
 
 
 
-        int loop =10000000;
+        int loop =100000000;
 
         final AtomicLong num = new AtomicLong(0);
         long begin = System.nanoTime();
@@ -36,7 +36,7 @@ public class CasMain {
 
 
 
-        loop =10000000;
+        loop =100000000;
         final CasMain casMain = new CasMain();
         begin = System.nanoTime();
         while(loop-- > 0){
