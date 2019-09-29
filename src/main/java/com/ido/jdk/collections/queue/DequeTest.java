@@ -2,7 +2,6 @@ package com.ido.jdk.collections.queue;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * @author xu.qiang

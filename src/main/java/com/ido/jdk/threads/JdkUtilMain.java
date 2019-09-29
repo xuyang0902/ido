@@ -13,6 +13,11 @@ public class JdkUtilMain {
 
     public static void main(String[] args) {
 
+
+        new LinkedBlockingDeque<Runnable>();
+
+        System.out.println(Integer.MAX_VALUE);
+
         /*
          * 固定线程数的线程池
          */

@@ -43,7 +43,6 @@ public class ThreadMain {
         }
 
 
-
         try {
             //cpu让出给这个thread
             thread.join(3200);

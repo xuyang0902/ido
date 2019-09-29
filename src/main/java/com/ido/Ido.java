@@ -1,6 +1,9 @@
 package com.ido;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * ido
@@ -12,49 +15,27 @@ public class Ido {
 
     public static void main(String[] args) {
 
-        HashSet hashset = new HashSet();
-
-        hashset.add(new Integer(1));
-
-        Integer a = 127;
-
-        int b = 127;
-
-        System.out.println(a == b);
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
 
 
-        System.out.println(Ido.get());
 
-        //打印单数
+        List<Integer> list2 = new ArrayList<Integer>();
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+        list2.add(4);
 
-        System.out.println("begin");
 
-        //outloop这个标示是可以自定义的比如outloop1,ol2,out5
-        outloop:
-        for (int j = 0; j < 10; j++) {
-            System.out.println("-->" + j);
-            if (1 == j % 2) {
-                break outloop; //如果是双数，结束外部循环
-            }
-        }
 
-        System.out.println("end");
+
 
 
     }
 
 
-    public static String get() {
-
-        try {
-
-            System.out.println("--->do");
-            return "do";
-        } finally {
-
-            System.out.println("--->finally");
-            return "finally";
-        }
-    }
 
 }

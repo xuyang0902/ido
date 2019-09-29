@@ -14,94 +14,47 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ReentrantLockTest {
 
-    private static final ReentrantLock lock = new ReentrantLock(true);
+
+    private static final ReentrantLock lock = new ReentrantLock(true/*true 公平锁*/);
 
 
     private volatile static int num = 0;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
 
 
+        //抢锁，抢不到会阻塞，
+        lock.lock();
+        try {
 
 
-        Thread a = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                lock.lock();
+            System.out.println("-->c");
 
-                try {
+        } finally {
+            lock.unlock();
+        }
 
 
-                    try {
-                        Thread.sleep(1000 * 5);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+        //非公平只抢一次
+        boolean tryLock = lock.tryLock();
+        try {
+            System.out.println("-->c");
 
-                    System.out.println("-->a");
+        } finally {
 
-                    //执行业务代码
-
-                } finally {
-                    lock.unlock();
-                }
-
+            if (tryLock) {
+                lock.unlock();
             }
-        }, "a");
+        }
 
-        Thread b = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                lock.lock();
+        //非公平抢锁，被中断直接异常
+        lock.lockInterruptibly();
+        try {
+            System.out.println("-->c");
 
-                try {
-
-                    try {
-                        Thread.sleep(1000 * 10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-
-                    System.out.println("-->b");
-
-                    //执行业务代码
-
-                } finally {
-                    lock.unlock();
-                }
-
-            }
-        }, "b");
-
-        Thread c = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                lock.lock();
-
-
-                try {
-
-                    try {
-                        Thread.sleep(1000 * 10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                    System.out.println("-->c");
-
-                } finally {
-                    lock.unlock();
-                }
-
-
-            }
-        }, "c");
-
-        a.start();
-        b.start();
-        c.start();
-
+        } finally {
+                lock.unlock();
+        }
 
 
     }
