@@ -20,20 +20,21 @@
 		3. JVM参数配置
 2. 互联网常用技术
 	* 数据库 Mysql 
-	* 分库分表工具 mycat
-	* 连接池 druid
+	* 分库分表工具 mycat sharding-jdbc
+	* 连接池 druid 
 	* 持久层ORM框架 mybatis  hibernate
-	* spring生态圈 spring | spring mvc | spring boot |spring cloud
+	* spring生态圈 spring | spring mvc | spring boot |spring cloud(eureka,robbin,feign,hystrix,zuul，spring-cloud-config...)
 	* 通信基础框架 netty mina 
 	* RPC框架 dubbo   grpc  sofa-rpc
 	* 消息中间件 rocketmq  kafka  activemq  rabbitmq
 	* 分布式事务中间件 tcc  补偿 消息   【阿里开源seata at mt模式】
-	* 任务调度框架  quartz
+	* 分布式配置中心 disconf apollo 
+	* 任务调度框架  quartz  elastic-job
 	* 缓存 redis memcache
 	* 分布式锁  redis zk 
 	* 高性能环形数组 disruptor
 	* 搜索引擎  lucene es
-	* 限流工具
+	* 限流工具  sentinel
 	* 负载均衡 nginx
 	* linux 基础命令
 	* http容器 tomcat jetty
