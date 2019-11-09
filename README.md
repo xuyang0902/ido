@@ -2,19 +2,6 @@
 
 [给自己定的目标大纲](https://github.com/xuyang0902/ido/blob/master/target.md)
  
-#### 基础知识
-1. [ReentrantLock源码解读](https://github.com/xuyang0902/ido/blob/master/src/main/java/com/ido/jdk/ReentrantLock%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md)
-
-     
-#### 开源框架
-1. [Fescar的锁设计和隔离级别的理解](https://www.jianshu.com/p/4cb127b737cf)
-
-
-#### 思考
-
-1. [CAP理论的思考](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/think/cap)
-2. [阻塞非阻塞&同步异步&并行并发串行](https://github.com/xuyang0902/ido/tree/master/src/main/java/com/ido/think/BlockingSynThinking)
-
 #### 核心竞争力
     
     码农的核心竞争力是什么？
