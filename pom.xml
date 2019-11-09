@@ -26,8 +26,54 @@
         <module>ido-base</module>
         <module>ido-netty</module>
         <module>ido-spring</module>
+        <module>ido-dubbo</module>
+        <module>ido-rocketmq</module>
+        <module>ido-disruptor</module>
+        <module>ido-mybatis</module>
+        <module>ido-jdbc</module>
+        <module>ido-spring-mvc</module>
+        <module>ido-redis</module>
+        <module>ido-sharding-jdbc</module>
+        <module>ido-23-design</module>
+        <module>ido-docker</module>
+        <module>ido-zookeeper</module>
+        <module>ido-k8s</module>
+        <module>ido-apollo</module>
+        <module>ido-pinpoint</module>
+        <module>ido-leetcode</module>
+        <module>ido-mysql</module>
+        <module>ido-net</module>
+        <module>ido-quartz</module>
+        <module>ido-es</module>
     </modules>
 
+    <properties>
+        <slf4j.version>1.6.4</slf4j.version>
+        <log4j.version>1.2.16</log4j.version>
+    </properties>
+
+
+    <dependencies>
+
+        <!-- logger start -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <!-- logger end -->
+
+    </dependencies>
 
 
 </project>
