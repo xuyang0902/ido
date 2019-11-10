@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--一级缓存  session级别  STATEMENT 执行完立马关闭-->
+        <setting name="localCacheScope" value="SESSION"/>
+        <!--二级缓存关闭 -->
+        <setting name="cacheEnabled" value="false"/>
+    </settings>
+
+    <!-- 数据库配置信息 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.1.105:3306/test"/>
+                <property name="username" value="tbj"/>
+                <property name="password" value="tbj900900"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 映射文件 -->
+    <mappers>
+        <mapper resource="mybatis/user.xml"/>
+    </mappers>
+</configuration>

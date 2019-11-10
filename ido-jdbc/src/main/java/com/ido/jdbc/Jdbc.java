@@ -3,6 +3,12 @@ package com.ido.jdbc;
 import java.sql.*;
 
 /**
+ * 事务是基于session（connection）
+ *
+ * mysql默认执行一条sql都是自动提交的
+ *
+ *
+ *
  * @author xu.qiang
  * @date 19/8/5
  */

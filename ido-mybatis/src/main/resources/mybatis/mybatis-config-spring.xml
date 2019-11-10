@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--一级缓存  session级别  STATEMENT 执行完立马关闭-->
+        <setting name="localCacheScope" value="SESSION"/>
+        <!--二级缓存关闭 -->
+        <setting name="cacheEnabled" value="false"/>
+    </settings>
+</configuration>
