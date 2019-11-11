@@ -361,7 +361,7 @@ final boolean nonfairTryAcquire(int acquires) {
 ###### 对阻塞队列流程的梳理
 
 
-![对阻塞队列流程的梳理]( /image/aqs阻塞队列.png)
+![对阻塞队列流程的梳理]( /ido-base/doc/aqs阻塞队列.png)
 
 
 1. 没抢到锁，安心入列
