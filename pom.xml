@@ -45,6 +45,7 @@
         <module>ido-net</module>
         <module>ido-quartz</module>
         <module>ido-es</module>
+        <module>ido-jvm</module>
     </modules>
 
     <properties>
