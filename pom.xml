@@ -31,7 +31,6 @@
         <module>ido-disruptor</module>
         <module>ido-mybatis</module>
         <module>ido-jdbc</module>
-        <module>ido-spring-mvc</module>
         <module>ido-redis</module>
         <module>ido-sharding-jdbc</module>
         <module>ido-23-design</module>
@@ -46,6 +45,7 @@
         <module>ido-quartz</module>
         <module>ido-es</module>
         <module>ido-jvm</module>
+        <module>ido-springmvc</module>
     </modules>
 
     <properties>
