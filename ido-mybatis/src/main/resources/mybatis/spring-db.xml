@@ -9,9 +9,9 @@
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
         <property name="url">
-            <value><![CDATA[jdbc:mysql://192.168.1.105:3306/test?useUnicode=true&characterEncoding=UTF-8]]></value>
+            <value><![CDATA[jdbc:mysql://192.168.1.16:3306/test?useUnicode=true&characterEncoding=UTF-8]]></value>
         </property>
-        <property name="username" value="xxx" />
+        <property name="username" value="tbj" />
         <property name="password" value="xxx" />
         <property name="filters" value="stat" />
         <property name="maxActive" value="20" />
@@ -35,10 +35,10 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 ,包下的类需要使用@MapperScan注解,否则容器注入会失败 -->
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 ,否则容器注入会失败 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.zx.yuren.mybatis.mapper" />
-        <property name="sqlSessionFactory" value="sqlSessionFactory" />
+        <property name="basePackage" value="com.ido.mybatis.mapper" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 
     <bean id="transactionTemplate"

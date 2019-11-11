@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.zx.yuren.mybatis.mapper.UserMapper">
+<mapper namespace="com.ido.mybatis.mapper.UserMapper">
 
-    <select id="selectById" resultType="com.zx.yuren.mybatis.model.User" parameterType="java.lang.Long">
+    <resultMap id="UserMapperMap" type="com.ido.mybatis.model.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+
+    <select id="selectById" resultMap="UserMapperMap" parameterType="java.lang.Long" >
       select * from user where id = #{id};
     </select>
 
 
-    <update id="updateById" parameterType="com.zx.yuren.mybatis.model.User" >
+    <update id="updateById" parameterType="com.ido.mybatis.model.User" >
         update USER
         set age = #{age}
         where id = #{id}
