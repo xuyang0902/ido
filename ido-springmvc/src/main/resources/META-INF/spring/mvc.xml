@@ -10,11 +10,19 @@
     <context:component-scan base-package="com.ido.springmvc"/>
 
 
+    <!--使用@PropertySource注入文件属性-->
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" >
+        <property name="locations">
+            <list>
+                <value>classpath:hello-springmvc.properties</value>
+            </list>
+        </property>
+    </bean>
+
     <!--
     annotation-driven   具体做了什么看 AnnotationDrivenBeanDefinitionParser
-
     -->
-    <mvc:annotation-driven>
+    <mvc:annotation-driven >
         <mvc:message-converters register-defaults="false">
             <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
                 <property name="supportedMediaTypes">
