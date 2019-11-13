@@ -53,17 +53,58 @@
             同步复制，org.apache.rocketmq.store.ha.HAService.GroupTransferService  查看slave上报的同步位置是否比这个当前消息>=了
             
 ##### DLedger【4.5之后支持】 使用raft协议的文本同步  
-       一个broker至少3台
        
 #####  为什么线上不建议开启自动创建topic？
+        集群有2个broker
+        开启自动创建topic
+         produer发一条消息，会根据默认的topic规则，选中一台broker发送消息
+        只有一台broker创建了这个topic
+        过了一段时间 这台broker把topic同步给nameserver了
+        那么另外一台broker就被浪费掉了
 
 #####  消息发送
+        1、producer问nameserver 关于这个topic的队列信息【如果没有会用默认的topic配置信息】
+        2、轮训找到broker的某个队列id
+        3、组装message信息发到对应的broker上去
 
-#####  消费消息
+#####  消费消费
+
+        broker消息消费的机制
+        ----broker处理client的拉消息请求-------
+        1.请求参数 topic queueid offset maxNums 
+        2.根据consumequeue解析出来从commitlog中获取数据GetMessageResult 返回出去
+        3.master 堆积的消息超过内存的百分之40 建议从slave拉
+        
+        
+        -------broker通知clinet拉消息的机制---------
+        1.客户端如果想broker拉消息没拉到，会在broker有一个缓存 topic@queueid拉请求的缓存
+        2.处理拉请求的机制
+          broker有一个线程PullRequestHoldService 每隔5秒会检查持有的请求
+          broker有commitlog分发到consumequeue的时候也会检查这个请求
+        3.检查请求做了什么？ topic queueId broker生产的最大的consumequeue的逻辑offset
+          3.1 每次检查 先clone一份请求然后 清理缓存【防止一直在处理这个请求】
+          3.2 如果broker的consumequeue的逻辑位置>请求的的offset 那么broker通知客户端来拉数据
+          3.3 如果请求挂起时间 已经超时了也通知客户端来拉数据
+          
+        客户端消息消费的逻辑
+        1.入口org.apache.rocketmq.client.impl.consumer.RebalanceService
+        2.每隔20秒把客户端的consumerTable遍历一遍，每个topic都执行下 this.rebalanceByTopic(topic, isOrder);
+        3.广播模式不分析了 分析集群模式
+        4.获取topic有多少ConsumeQueue，这个consumerGroup存在的机器 ids
+        5.根据AllocateMessageQueueAveragely策略 计算出当前的id应该负责消费哪个consumequeue
+        6.会往processQueueTable 放入本机需要处理的topic队列信息
+        7.立马执行拉消息请求 往org.apache.rocketmq.client.impl.consumer.PullMessageService放pullRequest
+        8.根据请求队列发拉请求给broker
 
 #####  消费重试
+        1、消费失败后，返回return_later，client把消息回发给broker
+        2、brocker把这个消息 重新组装 替换 topic 变成延迟队列的topic 队列id根据重试次数的一个行程的一个算法 
+        3、延迟消息定时任务把消息拉出来解析 重新把消息 topic替换成原来的topic 写到commitlog
 
 #####  事务消息
+        1、prepare消息 不会进consumequeue
+        2、有一个线程会轮训prepare消息进行回调[猜测 因为刚工作中分布式事务不用mq做 所以没仔细看过]
+        3、回调到client后 client发送commit消息
        
 ##### 零copy
         rocketmq使用mmap 做内存映射 
