@@ -47,6 +47,7 @@
         <module>ido-jvm</module>
         <module>ido-springmvc</module>
         <module>ido-springboot</module>
+        <module>ido-disconf</module>
     </modules>
 
     <properties>
