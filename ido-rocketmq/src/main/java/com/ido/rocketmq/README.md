@@ -69,7 +69,7 @@
 
 #####  消费消费
 
-        broker消息消费的机制
+        broker消息消费的机制 长轮训
         ----broker处理client的拉消息请求-------
         1.请求参数 topic queueid offset maxNums 
         2.根据consumequeue解析出来从commitlog中获取数据GetMessageResult 返回出去
