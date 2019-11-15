@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sharding="http://shardingjdbc.io/schema/shardingjdbc/sharding"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://shardingjdbc.io/schema/shardingjdbc/sharding
+                        http://shardingjdbc.io/schema/shardingjdbc/sharding/sharding.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd"
+>
+
+    <bean id="dataSource_0" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://192.168.1.16:3306/ds0"/>
+        <property name="username" value="tbj"/>
+        <property name="password" value="你不知道的事"/>
+    </bean>
+
+    <!--按照userId分库 不用分库-->
+<!--    <sharding:inline-strategy id="databaseStrategy" sharding-column="user_id"
+                              algorithm-expression="ds$->{user_id % 2}"/>-->
+    <!--按照order_id分表-->
+    <sharding:inline-strategy id="orderTableStrategy" sharding-column="id" algorithm-expression="user${id % 2}" />
+
+    <!--数据源配置-->
+    <sharding:data-source id="shardingDataSource">
+        <!--有多个数据源的话用逗号隔开-->
+        <sharding:sharding-rule data-source-names="dataSource_0">
+            <sharding:table-rules>
+                <!--路由策略 逻辑表user  -->
+                <sharding:table-rule logic-table="user" actual-data-nodes="dataSource_0.user${0..1}" table-strategy-ref="orderTableStrategy"/>
+
+            </sharding:table-rules>
+        </sharding:sharding-rule>
+        <sharding:props>
+            <prop key="sql.show">true</prop>
+        </sharding:props>
+    </sharding:data-source>
+
+
+    <context:component-scan base-package="com.ido.sharding"/>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:/META-INF/spring/mybatis-config-spring.xml"/>
+        <property name="dataSource" ref="shardingDataSource"/>
+    </bean>
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 ,否则容器注入会失败 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ido.sharding.dao" />
+<!--
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+</beans>
