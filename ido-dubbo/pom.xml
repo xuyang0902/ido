@@ -27,5 +27,13 @@
             <version>0.4</version>
         </dependency>
 
+
+        <!--使用spring的方式来使用dubbo-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.2.0.RELEASE</version>
+        </dependency>
+
     </dependencies>
 </project>

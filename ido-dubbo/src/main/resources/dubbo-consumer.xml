@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--应用名称-->
+    <dubbo:application name="ido-consumer"/>
+    <!--注册中心协议&地址-->
+    <dubbo:registry protocol="zookeeper" address="192.168.1.121:2181"/>
+    <!--使用dubbo协议在20881端口暴露协议-->
+    <dubbo:protocol name="dubbo" port="20881"/>
+
+    <!--引用服务-->
+    <dubbo:reference interface="com.ido.dubbo.debug.api.HelloDubbo" id="helloDubbo" cluster="2"/>
+
+</beans>
