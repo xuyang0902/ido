@@ -4,16 +4,35 @@ package com.ido.design.flyweight;
  * java中String使用的就是享元模式
  */
 public class TestString {
+
+    static{
+        System.out.println("static{}");
+    }
+
+    public TestString() {
+        System.out.println("()");
+    }
+
+    {
+        System.out.println("{}");
+    }
+
     public static void main(String[] args) {
-        String s1 = "123";
-        String s2 = "123";
-        String s3 = new String("123");
-        String s4 = new String("123");
-        System.out.println(s1 == s2);
-        System.out.println(s1 == s3);
-        System.out.println(s3 == s4);
-        System.out.println(s3.intern() == s1);
-        System.out.println(s3.intern() == s4.intern());
+
+        new TestString();
+
+       //
+
+
+        String s3 = new String("计算机基础");
+        String intern = s3.intern();
+
+        String s4 = new String("计算机基础");
+        System.out.println(s4.intern() == intern);
+
+
+
+
     }
 
 
