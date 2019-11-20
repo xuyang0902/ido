@@ -16,6 +16,11 @@ public class PreMainAgent {
 
     public static void premain(String args, Instrumentation instrumentation) {
         System.out.println("====premain方法执行1==== args:" + args);
+
+        /*
+         * 注册提供的转换器
+         *
+         */
         instrumentation.addTransformer(new Transformer());
     }
 
