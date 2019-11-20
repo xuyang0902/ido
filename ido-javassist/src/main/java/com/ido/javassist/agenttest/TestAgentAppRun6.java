@@ -1,4 +1,6 @@
-package com.ido.javassist;
+package com.ido.javassist.agenttest;
+
+import com.ido.javassist.agenttest.model.Person;
 
 /**
  * @author xu.qiang
@@ -18,7 +20,10 @@ public class TestAgentAppRun6 {
                 e.printStackTrace();
             }
 
-            System.out.println("1111");
+            Person person = new Person();
+            person.setName("yuren");
+
+            System.out.println(person.getName());
         }
     }
 }
