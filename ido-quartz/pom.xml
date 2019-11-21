@@ -13,4 +13,16 @@
 
     <name>ido-quartz</name>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+
+    </dependencies>
+
+
+
 </project>

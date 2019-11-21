@@ -7,6 +7,10 @@ package com.ido.design.singleton;
  * 这是目前好的解决方法之一
  */
 public class Mgr03 {
+
+    /**
+     * 为什么要加volatile 如果不加 可能指令重排  instance先指向了对象地址 但是对象可能还没new好
+     */
     private static volatile Mgr03 INSTANCE;
     private Mgr03(){
 
