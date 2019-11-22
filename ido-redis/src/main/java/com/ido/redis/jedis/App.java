@@ -1,4 +1,4 @@
-package com.ido;
+package com.ido.redis.jedis;
 
 /**
  * Hello world!

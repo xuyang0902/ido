@@ -10,7 +10,7 @@
         能持久化 RDB 和 AOF两种方式
         主从复制 （不保证数据一致性）
         高可用（哨兵机制，3.0后可以集群部署）
-        客户端语言多，java php c c++ node.js
+        客户端语言多，java php c c++ node.js etc  太多了
         默认总共有16个db。一般我们都用0那个 其他不用 可能很多人都不知道哦 哈哈哈哈
         
 ###### 场景
@@ -177,6 +177,10 @@
         自动安装模式
         1、下载ruby
         2、依次启动6个节点
+        port 6379
+        cluster-enabled yes
+        cluster-node-timeout 15000
+        cluster-config-file /usrlocalbin/cluster/data/nodes-6379.conf
         //创建集群 有一个副本
         3、./redis-trib.rb create --replicas 1 192.168.1.111:6379 
                                             192.168.1.111:6380
@@ -190,3 +194,9 @@
         
 ###### API使用   
         见code
+        redis的JAVA客户端有很多
+        常见的有 
+        jedis       A blazingly small and sane redis java client
+        letture     Advanced Redis client for thread-safe sync, async, and reactive usage. Supports Cluster, Sentinel, Pipelining, and codecs.
+        Redisson   distributed and scalable Java data structures on top of Redis server
+        当然还有其他好多
