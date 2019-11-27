@@ -12,4 +12,29 @@
     <artifactId>ido-es</artifactId>
 
     <name>ido-es</name>
+
+    <dependencies>
+
+        <!--rest 6版本以后推荐-->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>6.5.4</version>
+        </dependency>
+
+        <!--先试用transport呗   据说7.0被废弃  8.0被移除了-->
+      <!--
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>6.5.4</version>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+        </dependency>
+    </dependencies>
 </project>
