@@ -1,0 +1,21 @@
+server:
+  port: 8084
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8765/eureka/,http://peer2:8766/eureka/
+spring:
+  application:
+    name: cloud-admin
+  zipkin:
+     base-url: http://localhost:9411
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
