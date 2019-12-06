@@ -200,3 +200,20 @@
         letture     Advanced Redis client for thread-safe sync, async, and reactive usage. Supports Cluster, Sentinel, Pipelining, and codecs.
         Redisson   distributed and scalable Java data structures on top of Redis server
         当然还有其他好多
+        
+        
+####### 过期策略
+        定期删除
+            默认每隔100ms取过期的key（随机抽取一些key） 检查是否过期 过期的删除
+        惰性删除
+            获取某个key的时候，redis会检查这个key是否删除，如果过期的，就直接删除，不会返回任何东西
+        
+            
+        内存淘汰 主动清除（当前已用内存超过maxmemory限定时）
+        volatile-lru : 只对设置了过期时间的key进行LRU （默认值） （对已经设置了过期时间的数据结构，挑选最少使用的数据淘汰）
+        allkeys-lru: 删除LRU算法的key（从全部的数据结构，挑选最少使用的数据淘汰）
+        volatile-random : 随机删除即将过期的key（对已经设置了过期时间的数据，采用随机删除的数据淘汰）
+        allkeys-random : 随机删除（对所有的数据，采用随机删除的数据淘汰）
+        volatile-ttl ：删除即将过期的（只对设置了过期时间的数据，采用挑选将要过期的数据淘汰）
+        noeviction ：永不过期（这个清理过程是阻塞的）
+        
