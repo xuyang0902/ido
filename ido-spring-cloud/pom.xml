@@ -11,7 +11,8 @@
 		<module>zuul</module>
 		<module>zipkin</module>
 		<module>cloud-admin</module>
-	</modules>
+        <module>spring-cloud-gateway</module>
+    </modules>
 
 	<!--spring-boot的依赖-->
 	<parent>

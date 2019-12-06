@@ -1,0 +1,20 @@
+
+### 基本配置
+
+spring:
+  application:
+    name: cloud-gateway2
+server:
+  port: 9999
+
+##注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8765/eureka/,http://peer2:8766/eureka/
+
+
+#spring cloud gateway路由信息 动态加载
+
+#具体配置信息可以放到db，分布式配置中心，分布式缓存中，就不展开了，主要是写一下扩展
+

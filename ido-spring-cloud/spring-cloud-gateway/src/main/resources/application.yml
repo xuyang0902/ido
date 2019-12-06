@@ -1,0 +1,28 @@
+
+### 基本的静态实现
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: trade
+        uri: lb://TRADE
+        predicates:
+        - Path=/trade/**
+        filters:
+        ##移除第一部分的path
+        - StripPrefix=1
+
+  application:
+    name: cloud-gateway
+server:
+  port: 8080
+
+##注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8765/eureka/,http://peer2:8766/eureka/
+
+
+
