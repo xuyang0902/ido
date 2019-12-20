@@ -1,15 +1,22 @@
+     
+[http协议](http://www.ruanyifeng.com/blog/2016/08/http.html)
+
         http 0.9
-               
+            只有GET
         http 1.0
+            GET POST 和 HEAD
             请求头 请求体
             每次请求都要创建连接 请求完释放连接
         http 1.1
-            请求头中 加了一个connection: keep-alive
+        
+            PUT PATCH OPTIONS DELETE
+            请求头中 加了一个connection: keep-alive 默认
+            管道机制 在一个tcp请求中 客户端可以发送多个请求
             分块传输
         
-        http 2.0
+        http 2
             二进制传输 把内容压缩成二进制进行传输
-            单连接 + 帧  
+            多工
             头部压缩
             服务端可以主动push
         http 3.0
