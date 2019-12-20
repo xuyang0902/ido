@@ -17,7 +17,6 @@ public class CasMain {
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(16);
 
 
-
         int loop =100000000;
 
         final AtomicLong num = new AtomicLong(0);
