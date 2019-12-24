@@ -8,7 +8,7 @@
         schedule
     worker
         kubelet  -- agent
-        kube-prox
+        kube-proxy
     etcd
 
         
