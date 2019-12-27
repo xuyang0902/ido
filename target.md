@@ -41,6 +41,8 @@
 	* 容器化技术 docker k8s
 	* 自动化部署 jenkins
 	* 大数据生态圈 hadoop  hbase  hive  flume  spark  sqoop  pig storm 
+	* service mesh
+	* 分布式文件系统 fastdfs ceph
 4. 思考
 	* 微服务
 	* CAP原理
