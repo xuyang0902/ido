@@ -29,13 +29,13 @@
 	* 消息中间件 rocketmq  kafka  activemq  rabbitmq
 	* 分布式事务中间件 tcc  补偿 消息   【阿里开源seata at mt模式】
 	* 分布式配置中心 disconf apollo 
-	* 任务调度框架  quartz  elastic-job
-	* 缓存 redis memcache
-	* 分布式锁  redis zk 
+	* 分布式任务调度框架  quartz  elastic-job
+	* 分布式缓存 redis memcache
+	* 分布式锁  redis zk etcd consul
 	* 高性能环形数组 disruptor
 	* 搜索引擎  lucene es
 	* 限流工具  sentinel
-	* 负载均衡 nginx
+	* 负载均衡 nginx haproxy
 	* linux 基础命令
 	* http容器 tomcat jetty
 	* 容器化技术 docker k8s
