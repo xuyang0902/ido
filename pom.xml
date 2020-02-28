@@ -47,6 +47,7 @@
         <module>ido-jvm</module>
         <module>ido-springmvc</module>
         <module>ido-springboot</module>
+        <module>ido-spring-cloud</module>
         <module>ido-disconf</module>
         <module>ido-javassist</module>
         <module>ido-javaagent5</module>
