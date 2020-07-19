@@ -1,2 +1,1 @@
-test
-master commit
+All Commit
